@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import TableHeaderD from '@components/Admin/DevicesContent/TabHeaderD';
 import TableBodyD from '@components/Admin/DevicesContent/TabBodyD';
+import AddButton from '@components/Commun/Buttons/AddButton';
 import deleteW from '@public/assets/Table/deleteW.svg';
 import clear from '@public/assets/Table/delete.svg';
 import Pagination from '@components/Commun/Pagination';
@@ -9,8 +10,12 @@ import DropdownFilter from '@components/commun/fliter';
 import SearchBar from '@components/Admin/ClientContent/search';
 
 
-const TableD = (language) => {
- 
+const TableD = () => {
+  const handleAddButtonClick = () => {
+    // Handle button click logic here
+    console.log('Add button clicked');
+  };
+
   const [tableData, setTableData] = useState([
     { id: '#FRTL', deviceName: 'Box1', macAddress: '30:c6:f7:00:3c:6c', location: 'Italy', admin: 'John Doe', clients: 'Alice Doe, Bob smith,Alice Doe', sensors: '3', state: 'Enabled' },
     { id: '#LKIH', deviceName: 'Box2', macAddress: '08:3a:f2:44:d0:fc', location: 'Rome', admin: 'Jane Smith', clients: 'Charlie brown, David malhotra', sensors: '8', state: 'Disabled' },
@@ -76,7 +81,7 @@ const TableD = (language) => {
     <div className="top-left-text nunito f30 "></div>
     <div className="top-right-container flex">
      <SearchBar /> 
-     <button className="add-button">Add Device</button>
+     <AddButton onClick={handleAddButtonClick} text="Add Device" />
     </div>
   </div>
   <div className='mt-5 table-container'>

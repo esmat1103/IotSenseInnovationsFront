@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import TableHeaderS from '@components/Admin/SensorsContent/TabHeaderS';
 import TableBodyS from '@components/Admin/SensorsContent/TabBodyS';
+import AddButton from '@components/Commun/Buttons/AddButton';
 import deleteW from '@public/assets/Table/deleteW.svg';
 import clear from '@public/assets/Table/delete.svg';
 import Pagination from '@components/Commun/Pagination';
@@ -10,7 +11,11 @@ import SearchBar from '@components/Admin/ClientContent/search';
 
 
 const TableS = () => {
- 
+  const handleAddButtonClick = () => {
+    // Handle button click logic here
+    console.log('Add button clicked');
+  };
+
   const [tableData, setTableData] = useState([
     { id: '#FRTL',ref: 19, sensorName: "pulse1", unit: "Litres", rangeMin: 0, rangeMax: 999999.99, thresholdMin: 9000, thresholdMax: 999999.99, startIndex: 250, pulse: "Yes", action: "" },
     {id: '#FLRG', ref: 25, sensorName: "TEST", unit: "mg/L", rangeMin: 4, rangeMax: 20, thresholdMin: 4, thresholdMax: 20, startIndex: 0, pulse: "No", action: "" },
@@ -85,7 +90,7 @@ const TableS = () => {
     <div className="top-left-text nunito f30 "></div>
     <div className="top-right-container flex">
      <SearchBar /> 
-     <button className="add-button">Add Sensor</button>
+     <AddButton onClick={handleAddButtonClick} text="Add Sensor" />
     </div>
   </div>
   <div className='mt-5 table-container'>
