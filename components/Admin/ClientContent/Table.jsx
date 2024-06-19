@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import TableHeader from './TabHeader';
 import TableBody from './TabBody';
+import AddButton from '@components/Commun/Buttons/AddButton';
 import cl1 from '../../../public/assets/Table/1.png';
 import cl5 from '../../../public/assets/Table/cl5.jpeg';
 import cl2 from '../../../public/assets/Table/cl2.jpeg';
@@ -13,7 +14,6 @@ import Pagination from '../../Commun/Pagination';
 import DateFilter from '../../Commun/date-filter';
 import DropdownFilter from '../../Commun/fliter';
 import SearchBar from './search';
-import AddButton from '../../Commun/Buttons/AddButton';
 import FormClient from '../../Commun/Popups/Clients/form';
 
 
@@ -36,7 +36,7 @@ const Table = () => {
   const [selectedRows, setSelectedRows] = useState([]);
   const [hovered, setHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 6;
+  const rowsPerPage = 10;
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const toggleForm = () => {

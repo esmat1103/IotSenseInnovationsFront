@@ -1,11 +1,11 @@
 .table-auto {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0px 10px !important; 
-    padding-top: 5px !important; 
+    border-spacing: 0px 1px !important; 
     }
   
-.table-container {
+
+  .table-container {
     width: 100%;
     overflow-x: auto;
     height: auto;
@@ -23,10 +23,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 99; /* Ensure it's above the table */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 99; 
 }
-
 
   
 
@@ -39,7 +38,6 @@
   }
   
 
-   /* tab cpntainer */
   .container-tab {
     display: flex;
     flex-direction: column;

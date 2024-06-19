@@ -27,3 +27,12 @@
     color: #B8BABF;
   }
   
+  .search-input:focus {
+    outline: none; 
+    border-color: #007bff; 
+    box-shadow: 0 0 0 0.1rem rgba(111, 174, 242, 0.1); 
+}
+
+.search-input {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}

@@ -1,6 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { englishDictionary, frenchDictionary } from '@utils/language/headerClient';
 
 const TableHeader = ({ handleHeaderCheckboxChange }) => {
+  const [language, setLanguage] = useState('English'); 
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem('language');
+    if (storedLanguage) {
+      setLanguage(storedLanguage);
+    }
+  }, []);
+
+  const dictionary = language === 'French' ? frenchDictionary : englishDictionary;
+
   return (
     <thead className="table-header darkgrey">
       <tr className="table-header-row">
@@ -11,12 +23,12 @@ const TableHeader = ({ handleHeaderCheckboxChange }) => {
             onChange={handleHeaderCheckboxChange} 
           />
         </th>
-        <th className='f12 nunito '>ID</th>
-        <th className='f12 nunito  pl23'>Name</th>
-        <th className='f12 nunito '>Email</th>
-        <th className='f12 nunito pl17'>Phone Number</th>
-        <th className='f12 nunito pl23'>Created At</th>
-        <th className='f12 nunito pl50'>Actions</th>
+        <th className='f12 nunito '>{dictionary.id}</th>
+        <th className='f12 nunito  pl23'>{dictionary.name}</th>
+        <th className='f12 nunito '>{dictionary.email}</th>
+        <th className='f12 nunito pl17'>{dictionary.phoneNumber}</th>
+        <th className='f12 nunito pl23'>{dictionary.createdAt}</th>
+        <th className='f12 nunito  center'>{dictionary.actions}</th>
       </tr>
     </thead>
   );

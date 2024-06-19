@@ -26,7 +26,7 @@ function SearchBar({ onChange }) {
           onChange={(e) => setSearchValue(e.target.value)}
           className="search-input"
         />
-         {!searchValue && <span className="placeholder-search">Search client...</span>}
+         {!searchValue && <span className="placeholder-search">Search...</span>}
       </div>
       {isOpen && (
         <div>

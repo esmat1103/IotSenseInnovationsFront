@@ -9,7 +9,7 @@ const TableBody = ({ tableData, handleDelete, handleEdit, selectedRows, handleCh
       {tableData.map((row) => (
         <tr 
           key={row.id} 
-          className="table-row-box f14 nunito" 
+          className="table-row-box f12 nunito" 
         >
           <td>
             <input 
@@ -24,12 +24,12 @@ const TableBody = ({ tableData, handleDelete, handleEdit, selectedRows, handleCh
             <div className='profile-container'>
             <Image src={row.imageUrl} alt={`${row.firstName} ${row.lastName}`}  className="mr-2" id='profile-pic' />
             </div>
-            <span>{row.firstName} {row.lastName}</span>
+            <span className='fw600'>{row.firstName} {row.lastName}</span>
           </td>
           <td>{row.email}</td>
           <td className="centered-cell"><div className="box-cell">{row.phoneNumber}</div></td>
-          <td className="centered-cell"><div className="box-cell ">{row.createdAt}</div></td>
-          <td className="text-center">
+          <td className="centered-cell pl23"><div className="box-cell ">{row.createdAt}</div></td>
+          <td className="text-center  pl23">
             <div className="flex justify-center ">
               <button onClick={() => handleEdit(row.id)}>
                 <Image src={edit} alt='edit' width={20} height={20} />
