@@ -1,0 +1,52 @@
+.table-auto {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px 1px !important; 
+    }
+  
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    height: auto;
+    background-color: white;
+    padding: 20px;
+    padding-top: 0px; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .delete-button-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+
+   /* tab cpntainer */
+  .container-tab {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .top-container, .table-container {
+    flex: 1;
+  }
+  
+  
+  .top-right-container {
+    justify-content: flex-end;
+  }
+
+  .top-left-text-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  
+  
+  
