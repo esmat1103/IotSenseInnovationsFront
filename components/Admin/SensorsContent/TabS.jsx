@@ -44,7 +44,7 @@ const TableS = () => {
   const [selectedRows, setSelectedRows] = useState([]);
   const [hovered, setHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 11;
+  const rowsPerPage = 10;
 
   const handleDelete = (id) => {
   };
