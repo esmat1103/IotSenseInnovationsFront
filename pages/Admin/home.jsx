@@ -1,11 +1,10 @@
 import Layout from "../../components/Admin/layout";
 import Profile from "../../components/Admin/profile";
-
-
+import LayoutHome from "@components/Admin/layoutHome";
 const Home = () => {
     return (
         <>
-        <Layout />
+        <LayoutHome/>
         <Profile />       
         </>
 
@@ -14,3 +13,4 @@ const Home = () => {
 }
 
 export default Home;
+

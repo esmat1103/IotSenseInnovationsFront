@@ -6,7 +6,9 @@
         "@pages/*": ["pages/*"],
         "@public/*": ["public/*"],     
         "@app/*": ["app/*"],
-        "@contexts/*": ["contexts/*"]
+        "@contexts/*": ["contexts/*"],
+        "@utils/*": ["utils/*"]
+
 
         
 

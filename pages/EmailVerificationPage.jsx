@@ -6,10 +6,9 @@ import SubmitButton from '../components/Commun/Buttons/SubmitButton';
 
 const EmailVerificationPage = () => {
   const [email, setEmail] = useState('');
-  const [language, setLanguage] = useState('English'); // Default language
+  const [language, setLanguage] = useState('English'); 
   const router = useRouter();
 
-  // Retrieve language from local storage on initial render
   useEffect(() => {
     const storedLanguage = localStorage.getItem('language');
     if (storedLanguage) {
