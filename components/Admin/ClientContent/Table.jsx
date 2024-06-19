@@ -37,11 +37,9 @@ const Table = () => {
   const rowsPerPage = 10;
 
   const handleDelete = (id) => {
-    // Handle delete logic here
   };
 
   const handleEdit = (id) => {
-    // Handle edit logic here
   };
 
   const handleCheckboxChange = (id) => {

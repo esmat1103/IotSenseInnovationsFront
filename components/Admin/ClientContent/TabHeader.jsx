@@ -16,7 +16,7 @@ const TableHeader = ({ handleHeaderCheckboxChange }) => {
         <th className='f12 nunito '>Email</th>
         <th className='f12 nunito pl17'>Phone Number</th>
         <th className='f12 nunito pl23'>Created At</th>
-        <th className='f12 nunito pl50'>Actions</th>
+        <th className='f12 nunito  center'>Actions</th>
       </tr>
     </thead>
   );
