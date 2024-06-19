@@ -1,0 +1,78 @@
+.form-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30%; 
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.input-field, .custom-select {
+  background-color: white;
+  border: 1px solid #B8BABF;
+  padding: 8px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+.custom-select::-ms-expand {
+  display: none;
+}
+
+
+.custom-select::-webkit-select-arrow {
+  display: none;
+}
+
+.custom-select::-webkit-scrollbar {
+  display: none; 
+}
+
+
+.custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 10px; 
+  background-image: url('/assets/chevron-down.svg'); 
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  border: 1px solid #B8BABF;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  background-size: 20px;
+  color: #B8BABF;
+}
+
+.custom-select::-ms-expand {
+  display: none;
+}
+
+.custom-select::-webkit-select-arrow {
+  display: none;
+}
+
+.custom-select::-webkit-scrollbar {
+  display: none; 
+}

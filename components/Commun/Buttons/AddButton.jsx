@@ -1,8 +1,6 @@
-// components/Commun/AddButton.jsx
-
 import React from 'react';
 
-const AddButton = ({ onClick, text }) => {
+const AddButton = ({ text, onClick }) => {
   return (
     <button className="add-button" onClick={onClick}>
       {text}

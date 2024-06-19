@@ -8,13 +8,10 @@ import clear from '@public/assets/Table/delete.svg';
 import Pagination from '@components/Commun/Pagination';
 import DropdownFilter from '@components/commun/fliter';
 import SearchBar from '@components/Admin/ClientContent/search';
+import FormDevice from '@components/Commun/Popups/Devices/form';
 
 
 const TableD = () => {
-  const handleAddButtonClick = () => {
-    // Handle button click logic here
-    console.log('Add button clicked');
-  };
 
   const [tableData, setTableData] = useState([
     { id: '#FRTL', deviceName: 'Box1', macAddress: '30:c6:f7:00:3c:6c', location: 'Italy', admin: 'John Doe', clients: 'Alice Doe, Bob smith,Alice Doe', sensors: '3', state: 'Enabled' },
@@ -37,6 +34,12 @@ const TableD = () => {
   const [hovered, setHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 7;
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+
+  const toggleForm = () => {
+    setIsFormOpen(!isFormOpen);
+  };
 
   const handleDelete = (id) => {
   };
@@ -81,7 +84,7 @@ const TableD = () => {
     <div className="top-left-text nunito f30 "></div>
     <div className="top-right-container flex">
      <SearchBar /> 
-     <AddButton onClick={handleAddButtonClick} text="Add Device" />
+     <AddButton text="Add Device" onClick={toggleForm} />
     </div>
   </div>
   <div className='mt-5 table-container'>
@@ -120,6 +123,8 @@ const TableD = () => {
           </td>
         </tr>
       </tfoot>
+      {isFormOpen && <FormDevice isOpen={isFormOpen} onClose={toggleForm} />}
+      {isFormOpen && <div className="table-overlay"></div>}
     </table>
   </div>
 </div>

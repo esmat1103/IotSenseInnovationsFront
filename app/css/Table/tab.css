@@ -4,7 +4,8 @@
     border-spacing: 0px 1px !important; 
     }
   
-.table-container {
+
+  .table-container {
     width: 100%;
     overflow-x: auto;
     height: auto;
@@ -13,7 +14,19 @@
     padding-top: 0px; 
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
   }
+
+  .table-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 99; 
+}
+
   
 
   .delete-button-container {

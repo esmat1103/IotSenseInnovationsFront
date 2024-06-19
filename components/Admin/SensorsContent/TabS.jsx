@@ -8,6 +8,7 @@ import clear from '@public/assets/Table/delete.svg';
 import Pagination from '@components/Commun/Pagination';
 import DropdownFilter from '@components/commun/fliter';
 import SearchBar from '@components/Admin/ClientContent/search';
+import FormSensor from '@components/Commun/Popups/Sensors/form';
 
 
 const TableS = () => {
@@ -44,7 +45,13 @@ const TableS = () => {
   const [selectedRows, setSelectedRows] = useState([]);
   const [hovered, setHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 11;
+  const rowsPerPage = 10;
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+
+  const toggleForm = () => {
+    setIsFormOpen(!isFormOpen);
+  };
 
   const handleDelete = (id) => {
   };
@@ -90,7 +97,7 @@ const TableS = () => {
     <div className="top-left-text nunito f30 "></div>
     <div className="top-right-container flex">
      <SearchBar /> 
-     <AddButton onClick={handleAddButtonClick} text="Add Sensor" />
+     <AddButton text="Add Sensor" onClick={toggleForm} />
     </div>
   </div>
   <div className='mt-5 table-container'>
@@ -129,6 +136,8 @@ const TableS = () => {
           </td>
         </tr>
       </tfoot>
+      {isFormOpen && <FormSensor isOpen={isFormOpen} onClose={toggleForm} />}
+      {isFormOpen && <div className="table-overlay"></div>}
     </table>
   </div>
 </div>

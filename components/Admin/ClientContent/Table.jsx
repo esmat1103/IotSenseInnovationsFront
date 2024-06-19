@@ -14,14 +14,10 @@ import Pagination from '../../Commun/Pagination';
 import DateFilter from '../../Commun/date-filter';
 import DropdownFilter from '../../Commun/fliter';
 import SearchBar from './search';
+import FormClient from '../../Commun/Popups/Clients/form';
 
 
-const Table = (language ) => {
-  const handleAddButtonClick = () => {
-    // Handle button click logic here
-    console.log('Add button clicked');
-  };
-
+const Table = () => {
   const [tableData, setTableData] = useState([
     { id: '#FRTL', firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com', phoneNumber: '9876543210', createdAt: '2024-06-14', imageUrl: cl1},
     { id: '#LKIH', firstName: 'John', lastName: 'Smith', email: 'john@example.com', phoneNumber: '9876543211', createdAt: '2024-06-14', imageUrl: cl2 },
@@ -41,11 +37,18 @@ const Table = (language ) => {
   const [hovered, setHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const toggleForm = () => {
+    setIsFormOpen(!isFormOpen);
+  };
 
   const handleDelete = (id) => {
+    // Handle delete logic here
   };
 
   const handleEdit = (id) => {
+    // Handle edit logic here
   };
 
   const handleCheckboxChange = (id) => {
@@ -81,55 +84,58 @@ const Table = (language ) => {
 
   return (
     <div className="container-tab">
-  <div className="top-container flex justify-between">
-    <div className="top-left-text nunito f30 "></div>
-    <div className="top-right-container flex">
-     <SearchBar /> 
-     <AddButton onClick={handleAddButtonClick} text="Add Client" />
-     </div>
-  </div>
-  <div className='mt-5 table-container'>
-    <div className="filters-container flex justify-between">
-      <div className="delete-button-container">
-        {selectedRows.length > 0 && (
-          <button onClick={handleDeleteSelected} className="delete-button flex" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-            <Image src={hovered ? deleteW : clear} alt="clear" width={20} height={20} />
-            <p className='mt2 mx-1'>Delete Selected</p>
-          </button>
-        )}
+      <div className="top-container flex justify-between">
+        <div className="top-left-text nunito f30 "></div>
+        <div className="top-right-container flex">
+          <SearchBar />
+          <AddButton text="Add Client" onClick={toggleForm} />
+        </div>
       </div>
-      <div className='flex'>
-        <DateFilter onChange={(date) => console.log('Selected date:', date)} />
-        <DropdownFilter options={filterOptions} onChange={(option) => console.log('Selected option:', option)} />
+      <div className='mt-5 table-container'>
+        <div className="filters-container flex justify-between">
+          <div className="delete-button-container">
+            {selectedRows.length > 0 && (
+              <button onClick={handleDeleteSelected} className="delete-button flex" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+                <Image src={hovered ? deleteW : clear} alt="clear" width={20} height={20} />
+                <p className='mt2 mx-1'>Delete Selected</p>
+              </button>
+            )}
+          </div>
+          <div className='flex'>
+            <DateFilter onChange={(date) => console.log('Selected date:', date)} />
+            <DropdownFilter options={filterOptions} onChange={(option) => console.log('Selected option:', option)} />
+          </div>
+        </div>
+        <table className="mt-2 table-auto">
+          <TableHeader handleHeaderCheckboxChange={handleHeaderCheckboxChange} />
+          <TableBody
+            tableData={tableData.slice(startIndex, endIndex)}
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
+            selectedRows={selectedRows}
+            handleCheckboxChange={handleCheckboxChange}
+          />
+          <tfoot>
+            <tr>
+              <td colSpan="8">
+                <div className='pagination-container'>
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={Math.ceil(tableData.length / rowsPerPage)}
+                    onPageChange={onPageChange}
+                  />
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        {isFormOpen && <FormClient isOpen={isFormOpen} onClose={toggleForm} />}
+        {isFormOpen && <div className="table-overlay"></div>}
       </div>
     </div>
-    <table className="mt-2 table-auto">
-      <TableHeader handleHeaderCheckboxChange={handleHeaderCheckboxChange}  language={language} />
-      <TableBody
-        tableData={tableData.slice(startIndex, endIndex)}
-        handleDelete={handleDelete}
-        handleEdit={handleEdit}
-        selectedRows={selectedRows}
-        handleCheckboxChange={handleCheckboxChange}
-      />
-      <tfoot>
-        <tr>
-          <td colSpan="8">
-            <div className='pagination-container'>
-              <Pagination
-                currentPage={currentPage}
-                totalPages={Math.ceil(tableData.length / rowsPerPage)}
-                onPageChange={onPageChange}
-              />
-            </div>
-          </td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-</div>
-
   );
+
+
 };
 
 export default Table;

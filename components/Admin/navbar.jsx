@@ -40,7 +40,6 @@ const Navbar = () => {
                     <Image src={Notification} alt='notification' width={15} id="notification-icon" className='m-0' />
                 </button>
             </div>
-
             <div className="profile-container mt-2 mr-2 flex items-center justify-center">
                 <button className="flex items-center justify-center text-white p-0 m-0">
                     <Image src={Pic} alt='pic' id="profile-pic" className='m-0' />
