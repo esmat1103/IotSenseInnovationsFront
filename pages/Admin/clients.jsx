@@ -5,7 +5,7 @@ const Clients = () => {
     return (
         <>
         <Layout >
-            <div className="mt-5  bg-w">
+            <div className="mt-5 bg-w">
             <Table />
             </div>
             

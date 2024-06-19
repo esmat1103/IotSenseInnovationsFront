@@ -54,3 +54,27 @@ td.centered-cell {
   transform: scale(1.02);   
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+.box-cellD {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color:rgb(254,117,75, 0.1);
+  color: rgb(254,117,75);
+  font-weight: 600;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  font-family:"Nunito Sans", sans-serif;
+}
+.box-cellE {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color:  rgba(228,251, 248, 0.9);
+  border-radius: 10px;
+  text-align: center;
+  color: #14B8CA;
+  margin: 0 auto;
+  font-weight: 600;
+  font-family:"Nunito Sans", sans-serif;
+}
