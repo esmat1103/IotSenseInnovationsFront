@@ -6,9 +6,9 @@ import AddButton from '@components/Commun/Buttons/AddButton';
 import deleteW from '@public/assets/Table/deleteW.svg';
 import clear from '@public/assets/Table/delete.svg';
 import Pagination from '@components/Commun/Pagination';
-import DropdownFilter from '@components/commun/fliter';
 import SearchBar from '@components/Admin/ClientContent/search';
 import FormDevice from '@components/Commun/Popups/Devices/form';
+import DropdownFilter from '../../commun/fliter';
 
 
 const TableD = () => {
