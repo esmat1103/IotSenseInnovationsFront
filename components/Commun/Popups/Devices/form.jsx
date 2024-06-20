@@ -90,7 +90,7 @@ const FormDevice = ({ isOpen, onClose }) => {
             name="Location"
             className="input-field custom-select"
           >
-            <option disabled>Select Location</option>
+            <option disabled selected>Location</option>
             {countries.map(country => (
               <option key={country} value={country}>{country}</option>
             ))}
