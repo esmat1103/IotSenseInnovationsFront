@@ -18,6 +18,7 @@ import pulseG from '/public/assets/Sidebar/pulse-g.svg';
 import msgW from '/public/assets/Sidebar/msg-w.svg';
 import msgG from '/public/assets/Sidebar/msg-g.svg';
 import logout from '/public/assets/Sidebar/logout.svg';
+import LogoutConfirmation from '@components/Commun/Popups/LogoutPopup';
 
 
 
@@ -27,7 +28,20 @@ const Sidebar = () => {
     const [activePath, setActivePath] = useState('');
     const [hovered, setHovered] = useState('');
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [showLogoutConfirmation, setShowLogoutConfirmation] = useState(false);
+    const handleLogoutClick = () => {
+        setShowLogoutConfirmation(true);
+    };
 
+    const handleConfirmLogout = () => {
+        // Perform logout action here
+        // Redirect or clear session/storage
+        setShowLogoutConfirmation(false);
+    };
+
+    const handleCancelLogout = () => {
+        setShowLogoutConfirmation(false);
+    };
 
     useEffect(() => {
         setActivePath(router.pathname);
@@ -115,14 +129,20 @@ const Sidebar = () => {
                 </ul>)}
                  </ul>
             </nav>
-                 <div className="logout">
-                    <Link href="/logout" className="items-center flex">
-                    <Image src={logout} alt="logout" width={18} height={18} className='ml-4'/>
-                    <p className="f14 fw200 ml-2">Logout</p>
-                    </Link>
+            <div className="logout">
+                    <button onClick={handleLogoutClick} className="items-center flex">
+                        <Image src={logout} alt="logout" width={18} height={18} className='ml-4'/>
+                        <p className="f14 fw200 ml-2">Logout</p>
+                    </button>
                 </div>
-        </div>    
-     </>
+            </div>
+            {showLogoutConfirmation && (
+                <LogoutConfirmation
+                    onConfirmDelete={handleConfirmLogout}
+                    onCancelDelete={handleCancelLogout}
+                />
+            )}
+        </>
     );
 };
 

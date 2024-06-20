@@ -13,12 +13,8 @@ const DeleteConfirmation = ({ item, onConfirmDelete, onCancelDelete }) => {
 
           <p>
             <span className='fw600 f20 center'>Are you sure?</span><br />
-            <span className='f14'>You want to delete the Client </span>
-            <span className='fw600 f12'>{item.firstName}</span>,
-            <span className='fw600 f12'>{item.lastName}</span>
-            <span className='f14'> with email </span>
-            <span className='fw600 f12'>{item.email}</span>
-
+            <span className='f14'>You want to delete the sensor "</span>
+            <span className='fw600 f12'>{item.sensorName}</span>
             <span className='f14'>?</span>
           </p>
         </div>

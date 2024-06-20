@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 import TableHeader from './TabHeader';
 import TableBody from './TabBody';
 import AddButton from '@components/Commun/Buttons/AddButton';
@@ -9,13 +8,13 @@ import cl2 from '../../../public/assets/Table/cl2.jpeg';
 import cl3 from '../../../public/assets/Table/cl3.jpeg';
 import cl4 from '../../../public/assets/Table/cl4.jpeg';
 import deleteW from '../../../public/assets/Table/deleteW.svg';
-import clear from '../../../public/assets/Table/delete.svg';
 import Pagination from '../../Commun/Pagination';
 import SearchBar from './search';
 import FormClient from '@components/Commun/Popups/Clients/form';
 import DateFilter from '@components/Commun/date-filter';
 import DropdownFilter from '../../commun/fliter';
-
+import DeleteAllButton from '@components/Commun/Buttons/DeleteAllButton';
+import DeleteConfirmation from '@components/Commun/Popups/DeleteAllConfirmation';
 
 const Table = () => {
   const [tableData, setTableData] = useState([
@@ -38,6 +37,9 @@ const Table = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false); 
+  const [deleteItem, setDeleteItem] = useState(null); 
+
 
   const toggleForm = () => {
     setIsFormOpen(!isFormOpen);
@@ -77,9 +79,19 @@ const Table = () => {
   const filterOptions = ['Option 1', 'Option 2', 'Option 3'];
 
   const handleDeleteSelected = () => {
+    setShowDeleteConfirmation(true); 
+  };
+  
+  const confirmDelete = () => {
     const updatedData = tableData.filter((row) => !selectedRows.includes(row.id));
     setTableData(updatedData);
     setSelectedRows([]);
+    setShowDeleteConfirmation(false);
+  };
+  
+
+  const cancelDelete = () => {
+    setShowDeleteConfirmation(false);
   };
 
   return (
@@ -94,12 +106,17 @@ const Table = () => {
       <div className='mt-5 table-container'>
         <div className="filters-container flex justify-between">
           <div className="delete-button-container">
-            {selectedRows.length > 0 && (
-              <button onClick={handleDeleteSelected} className="delete-button flex" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-                <Image src={hovered ? deleteW : clear} alt="clear" width={20} height={20} />
-                <p className='mt2 mx-1'>Delete Selected</p>
-              </button>
-            )}
+          {selectedRows.length > 0 && (
+            <DeleteAllButton
+              onClick={handleDeleteSelected}
+              hovered={hovered}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              buttonText="Delete Selected"
+              imageSrc={deleteW}
+              altText="delete"
+            />
+          )}
           </div>
           <div className='flex'>
             <DateFilter onChange={(date) => console.log('Selected date:', date)} />
@@ -132,6 +149,13 @@ const Table = () => {
         {isFormOpen && <FormClient isOpen={isFormOpen} onClose={toggleForm} />}
         {isFormOpen && <div className="table-overlay"></div>}
       </div>
+      {showDeleteConfirmation && (
+        <DeleteConfirmation
+          item={deleteItem}
+          onConfirmDelete={confirmDelete}
+          onCancelDelete={cancelDelete}
+        />
+      )}
     </div>
   );
 

@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 import TableHeaderS from '@components/Admin/SensorsContent/TabHeaderS';
 import TableBodyS from '@components/Admin/SensorsContent/TabBodyS';
 import AddButton from '@components/Commun/Buttons/AddButton';
 import deleteW from '@public/assets/Table/deleteW.svg';
-import clear from '@public/assets/Table/delete.svg';
 import Pagination from '@components/Commun/Pagination';
 import DropdownFilter from '../../commun/fliter';
 import SearchBar from '@components/Admin/ClientContent/search';
 import FormSensor from '@components/Commun/Popups/Sensors/form';
-
+import DeleteAllButton from '@components/Commun/Buttons/DeleteAllButton';
+import DeleteConfirmation from '@components/Commun/Popups/DeleteAllConfirmation';
 
 const TableS = () => {
   const handleAddButtonClick = () => {
@@ -47,6 +46,8 @@ const TableS = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false); 
+  const [deleteItem, setDeleteItem] = useState(null); 
 
 
   const toggleForm = () => {
@@ -72,9 +73,10 @@ const TableS = () => {
     if (selectedRows.length === tableData.length) {
       setSelectedRows([]);
     } else {
-      setSelectedRows(tableData.map(row => row.ref));
+      setSelectedRows(tableData.map(row => row.id));
     }
   };
+
 
   const onPageChange = (page) => {
     setCurrentPage(page);
@@ -86,9 +88,19 @@ const TableS = () => {
   const filterOptions = ['Option 1', 'Option 2', 'Option 3'];
 
   const handleDeleteSelected = () => {
+    setShowDeleteConfirmation(true); 
+  };
+  
+  const confirmDelete = () => {
     const updatedData = tableData.filter((row) => !selectedRows.includes(row.id));
     setTableData(updatedData);
     setSelectedRows([]);
+    setShowDeleteConfirmation(false);
+  };
+  
+
+  const cancelDelete = () => {
+    setShowDeleteConfirmation(false);
   };
 
   return (
@@ -104,10 +116,15 @@ const TableS = () => {
     <div className="filters-container flex justify-between">
       <div className="delete-button-container">
         {selectedRows.length > 0 && (
-          <button onClick={handleDeleteSelected} className="delete-button flex" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-            <Image src={hovered ? deleteW : clear} alt="clear" width={20} height={20} />
-            <p className='mt2 mx-1'>Delete Selected</p>
-          </button>
+          <DeleteAllButton
+          onClick={handleDeleteSelected}
+          hovered={hovered}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          buttonText="Delete Selected"
+          imageSrc={deleteW}
+          altText="delete"
+        />
         )}
       </div>
       <div className=''>
@@ -140,6 +157,13 @@ const TableS = () => {
       {isFormOpen && <div className="table-overlay"></div>}
     </table>
   </div>
+  {showDeleteConfirmation && (
+        <DeleteConfirmation
+          item={deleteItem}
+          onConfirmDelete={confirmDelete}
+          onCancelDelete={cancelDelete}
+        />
+      )}
 </div>
 
   );

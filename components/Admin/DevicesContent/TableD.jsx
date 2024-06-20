@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 import TableHeaderD from '@components/Admin/DevicesContent/TabHeaderD';
 import TableBodyD from '@components/Admin/DevicesContent/TabBodyD';
 import AddButton from '@components/Commun/Buttons/AddButton';
 import deleteW from '@public/assets/Table/deleteW.svg';
-import clear from '@public/assets/Table/delete.svg';
 import Pagination from '@components/Commun/Pagination';
 import SearchBar from '@components/Admin/ClientContent/search';
 import FormDevice from '@components/Commun/Popups/Devices/form';
 import DropdownFilter from '../../commun/fliter';
+import DeleteAllButton from '@components/Commun/Buttons/DeleteAllButton';
+import DeleteConfirmation from '@components/Commun/Popups/DeleteAllConfirmation';
 
 
 const TableD = () => {
@@ -35,6 +35,8 @@ const TableD = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 7;
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false); 
+  const [deleteItem, setDeleteItem] = useState(null); 
 
 
   const toggleForm = () => {
@@ -73,9 +75,19 @@ const TableD = () => {
   const filterOptions = ['Option 1', 'Option 2', 'Option 3'];
 
   const handleDeleteSelected = () => {
+    setShowDeleteConfirmation(true); 
+  };
+  
+  const confirmDelete = () => {
     const updatedData = tableData.filter((row) => !selectedRows.includes(row.id));
     setTableData(updatedData);
     setSelectedRows([]);
+    setShowDeleteConfirmation(false);
+  };
+  
+
+  const cancelDelete = () => {
+    setShowDeleteConfirmation(false);
   };
 
   return (
@@ -91,10 +103,15 @@ const TableD = () => {
     <div className="filters-container flex justify-between">
       <div className="delete-button-container">
         {selectedRows.length > 0 && (
-          <button onClick={handleDeleteSelected} className="delete-button flex" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-            <Image src={hovered ? deleteW : clear} alt="clear" width={20} height={20} />
-            <p className='mt2 mx-1'>Delete Selected</p>
-          </button>
+         <DeleteAllButton
+         onClick={handleDeleteSelected}
+         hovered={hovered}
+         onMouseEnter={() => setHovered(true)}
+         onMouseLeave={() => setHovered(false)}
+         buttonText="Delete Selected"
+         imageSrc={deleteW}
+         altText="delete"
+       />
         )}
       </div>
       <div className=''>
@@ -127,6 +144,13 @@ const TableD = () => {
       {isFormOpen && <div className="table-overlay"></div>}
     </table>
   </div>
+  {showDeleteConfirmation && (
+        <DeleteConfirmation
+          item={deleteItem}
+          onConfirmDelete={confirmDelete}
+          onCancelDelete={cancelDelete}
+        />
+      )}
 </div>
 
   );
