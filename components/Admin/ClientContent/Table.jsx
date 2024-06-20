@@ -11,10 +11,10 @@ import cl4 from '../../../public/assets/Table/cl4.jpeg';
 import deleteW from '../../../public/assets/Table/deleteW.svg';
 import clear from '../../../public/assets/Table/delete.svg';
 import Pagination from '../../Commun/Pagination';
-import DateFilter from '../../Commun/date-filter';
-import DropdownFilter from '../../Commun/fliter';
 import SearchBar from './search';
-import FormClient from '../../Commun/Popups/Clients/form';
+import FormClient from '@components/Commun/Popups/Clients/form';
+import DateFilter from '@components/Commun/date-filter';
+import DropdownFilter from '../../commun/fliter';
 
 
 const Table = () => {

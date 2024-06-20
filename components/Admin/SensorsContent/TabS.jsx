@@ -6,7 +6,7 @@ import AddButton from '@components/Commun/Buttons/AddButton';
 import deleteW from '@public/assets/Table/deleteW.svg';
 import clear from '@public/assets/Table/delete.svg';
 import Pagination from '@components/Commun/Pagination';
-import DropdownFilter from '@components/commun/fliter';
+import DropdownFilter from '../../commun/fliter';
 import SearchBar from '@components/Admin/ClientContent/search';
 import FormSensor from '@components/Commun/Popups/Sensors/form';
 

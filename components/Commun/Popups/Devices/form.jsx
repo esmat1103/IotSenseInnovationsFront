@@ -59,7 +59,7 @@ const FormDevice = ({ isOpen, onClose }) => {
   }
 
   return (
-    <div className="form-container nunito">
+    <div className="form-container-popup nunito">
       {showSuccessAlert && <SuccessAlert message="Client added successfully !" onClose={closeSuccessAlert} />}
       {showErrorAlert && <ErrorAlert message="Please fill in all the fields !" onClose={closeErrorAlert} />}
       <button className="return-button mb-5" onClick={onClose}>
