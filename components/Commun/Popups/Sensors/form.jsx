@@ -87,7 +87,7 @@ const FormSensor = ({ isOpen, onClose }) => {
             className="input-field custom-select"
             placeholder="Unit"
           >
-            <option disabled>Select Unit</option>
+            <option disabled selected>Unit</option>
             <option value="Celsius">Celsius</option>
             <option value="Fahrenheit">Fahrenheit</option>
             <option value="Other">Other</option>
@@ -145,7 +145,7 @@ const FormSensor = ({ isOpen, onClose }) => {
             className="input-field custom-select"
             placeholder="Pulse"
           >
-            <option disabled>Pulse</option>
+            <option disabled selected>Pulse</option>
             <option value="Enabled">Enabled</option>
             <option value="Disabled">Disabled</option>
           </select>
