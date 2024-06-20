@@ -32,6 +32,7 @@
 @import url('../app/css/Content/alerts.css');
 
 
+@import url('../app/css/popups/DeleteConfirmation.css');
 
 
 
@@ -59,8 +60,16 @@
 }
 .center{
     text-align: center !important;
+
+   
 }
 
+.center1{
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+
+}
 
 
 
