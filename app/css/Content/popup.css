@@ -32,6 +32,11 @@ button {
   width: 100%;
   box-sizing: border-box;
   height: 40px;
+  outline: none;
+}
+
+.input-field:focus, .custom-select:focus {
+  border-color: #77797d; 
 }
 
 .custom-select::-ms-expand {
