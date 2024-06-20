@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import TableHeader from './TabHeader';
 import TableBody from './TabBody';
+import AddButton from '@components/Commun/Buttons/AddButton';
 import cl1 from '../../../public/assets/Table/1.png';
 import cl5 from '../../../public/assets/Table/cl5.jpeg';
 import cl2 from '../../../public/assets/Table/cl2.jpeg';
@@ -16,6 +17,11 @@ import SearchBar from './search';
 
 
 const Table = (language ) => {
+  const handleAddButtonClick = () => {
+    // Handle button click logic here
+    console.log('Add button clicked');
+  };
+
   const [tableData, setTableData] = useState([
     { id: '#FRTL', firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com', phoneNumber: '9876543210', createdAt: '2024-06-14', imageUrl: cl1},
     { id: '#LKIH', firstName: 'John', lastName: 'Smith', email: 'john@example.com', phoneNumber: '9876543211', createdAt: '2024-06-14', imageUrl: cl2 },
@@ -79,8 +85,8 @@ const Table = (language ) => {
     <div className="top-left-text nunito f30 "></div>
     <div className="top-right-container flex">
      <SearchBar /> 
-     <button className="add-button">Add Client</button>
-    </div>
+     <AddButton onClick={handleAddButtonClick} text="Add Client" />
+     </div>
   </div>
   <div className='mt-5 table-container'>
     <div className="filters-container flex justify-between">
