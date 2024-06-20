@@ -15,7 +15,7 @@ import DropdownFilter from '../../Commun/fliter';
 import SearchBar from './search';
 
 
-const Table = () => {
+const Table = (language ) => {
   const [tableData, setTableData] = useState([
     { id: '#FRTL', firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com', phoneNumber: '9876543210', createdAt: '2024-06-14', imageUrl: cl1},
     { id: '#LKIH', firstName: 'John', lastName: 'Smith', email: 'john@example.com', phoneNumber: '9876543211', createdAt: '2024-06-14', imageUrl: cl2 },
@@ -98,7 +98,7 @@ const Table = () => {
       </div>
     </div>
     <table className="mt-2 table-auto">
-      <TableHeader handleHeaderCheckboxChange={handleHeaderCheckboxChange} />
+      <TableHeader handleHeaderCheckboxChange={handleHeaderCheckboxChange}  language={language} />
       <TableBody
         tableData={tableData.slice(startIndex, endIndex)}
         handleDelete={handleDelete}

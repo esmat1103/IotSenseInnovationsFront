@@ -9,7 +9,7 @@ import DropdownFilter from '@components/commun/fliter';
 import SearchBar from '@components/Admin/ClientContent/search';
 
 
-const TableD = () => {
+const TableD = (language) => {
  
   const [tableData, setTableData] = useState([
     { id: '#FRTL', deviceName: 'Box1', macAddress: '30:c6:f7:00:3c:6c', location: 'Italy', admin: 'John Doe', clients: 'Alice Doe, Bob smith,Alice Doe', sensors: '3', state: 'Enabled' },
