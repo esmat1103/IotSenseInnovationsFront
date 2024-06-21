@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import returnIcon from '/public/assets/return.svg';
-import profile from '/public/assets/profile.svg';
+import profile from '../../../../public/assets/profile.svg';
 import SuccessAlert from '../../Alerts/success-alert';
 import ErrorAlert from '../../Alerts/error-alert';
 

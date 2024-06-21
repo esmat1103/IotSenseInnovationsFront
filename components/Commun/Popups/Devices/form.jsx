@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import returnIcon from '/public/assets/return.svg';
-import chevrondown from '/public/assets/chevron-down.svg';
+import chevrondown from '@public/assets/chevron-down.svg';
 import SuccessAlert from '../../Alerts/success-alert';
-import ErrorAlert from '../../Alerts/error-alert';
+import ErrorAlert from '../../Alerts/error-alert'; 
 
 const FormDevice = ({ isOpen, onClose }) => {
   const fileInputRef = useRef(null);
