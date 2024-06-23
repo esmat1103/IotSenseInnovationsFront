@@ -6,7 +6,12 @@
 .f9{
     font-size: 9px;
 }
-
+.f10{
+    font-size: 10px;
+}
+.f11{
+    font-size: 11px;
+}
 .f12{
     font-size: 12px;
 }
@@ -17,6 +22,9 @@
 
 .f20{
     font-size: 20px;
+}
+.f25{
+    font-size: 25px;
 }
 .f30{
     font-size: 30px;

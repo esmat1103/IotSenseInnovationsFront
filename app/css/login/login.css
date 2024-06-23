@@ -98,11 +98,11 @@ form h1 {
   right: 15px;
   transform: translateY(-50%);
   cursor: pointer;
-  display: none; /* Start with both hidden */
+  display: none; 
 }
 
 .input-with-icon .visibility-icon.visible {
-  display: block; /* Show the active icon */
+  display: block; 
 }
 
 .input-with-icon input {
