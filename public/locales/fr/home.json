@@ -1,0 +1,13 @@
+{
+    "welcomeMessage": "Bienvenue sur notre site!",
+    "signInMessage": "Veuillez vous connecter pour continuer.",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Mot de passe",
+    "agreeToTerms": "Je suis d'accord avec les",
+    "termsLink": "Conditions d'utilisation",
+    "privacyLink": "Politique de confidentialité",
+    "RememberMe": "Se souvenir de moi",
+    "submitButton": "Se connecter",
+    "forgotPassword": "Mot de passe oublié?"
+  }
+  

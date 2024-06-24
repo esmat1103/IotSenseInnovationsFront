@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { englishDictionary, frenchDictionary } from '@utils/language/headerClient';
+import { englishDictionary, frenchDictionary } from '@app/utils/language/headerClient';
 
 const TableHeader = ({ handleHeaderCheckboxChange }) => {
   const [language, setLanguage] = useState('English'); 

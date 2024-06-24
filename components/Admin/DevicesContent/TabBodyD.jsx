@@ -40,21 +40,21 @@ const TableBodyD = ({ tableData, handleEdit, selectedRows, handleCheckboxChange 
               onChange={() => handleCheckboxChange(row.id)} 
             />
           </td>
-          <td className="centered-cell"><div className="box-cell f12">{row.id}</div></td>
-          <td className='f12 nunito pl23 darkgrey '>{row.deviceName}</td>
-          <td className='f12 nunito  fw600 darkgrey'>{row.macAddress}</td>
-          <td className='f12 nunito pl17'><div className="box-cell f12">{row.location}</div></td>
-          <td className='f12 nunito pl23'>{row.admin}</td>
-          <td className='f12 nunito pl50'>
+          <td className="centered-cell"><div className="box-cell f11">{row.id}</div></td>
+          <td className='f11 nunito pl23 darkgrey '>{row.deviceName}</td>
+          <td className='f11 nunito  fw600 darkgrey'>{row.macAddress}</td>
+          <td className='f11 nunito pl17'><div className="box-cell f11">{row.location}</div></td>
+          <td className='f11 nunito pl23'>{row.admin}</td>
+          <td className='f11 nunito pl50'>
             {row.clients.split(',').map((client, index) => (
               <div key={index}>
                 {client}
               </div>
             ))}
           </td>
-          <td className='f12 nunito pl23  '><div className="box-cell f12">{row.sensors}</div></td>
-          <td className="f12 nunito  ">
-            <div className={row.state === 'Enabled' ? 'box-cellE f12' : 'box-cellD f12'}>
+          <td className='f11 nunito pl23  '><div className="box-cell f11">{row.sensors}</div></td>
+          <td className="f11 nunito  ">
+            <div className={row.state === 'Enabled' ? 'box-cellE f11' : 'box-cellD f11'}>
               {row.state}
             </div>
           </td>
