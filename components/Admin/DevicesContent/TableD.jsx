@@ -33,7 +33,7 @@ const TableD = () => {
   const [selectedRows, setSelectedRows] = useState([]);
   const [hovered, setHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 7;
+  const rowsPerPage = 8;
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false); 
   const [deleteItem, setDeleteItem] = useState(null); 
@@ -118,7 +118,7 @@ const TableD = () => {
         <DropdownFilter options={filterOptions} onChange={(option) => console.log('Selected option:', option)} />
       </div>
     </div>
-    <table className="mt-2 table-auto">
+    <table className=" table-auto">
       <TableHeaderD handleHeaderCheckboxChange={handleHeaderCheckboxChange} />
       <TableBodyD
         tableData={tableData.slice(startIndex, endIndex)}

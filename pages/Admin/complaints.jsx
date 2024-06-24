@@ -1,10 +1,15 @@
-import Layout from "../../components/Admin/layout";
+import LayoutHome from "@components/Admin/layoutHome";
+import ComplaintPage from "@components/Admin/ComplaintContent/complaint";
 
 
 const Complaints = () => {
     return (
         <>
-        <Layout />        
+        <LayoutHome >
+            
+            <ComplaintPage />
+            
+        </LayoutHome>    
         </>
     );
 

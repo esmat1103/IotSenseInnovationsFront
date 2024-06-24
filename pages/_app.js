@@ -1,18 +1,10 @@
 // pages/_app.js
-import React from 'react';
+import { appWithTranslation } from 'next-i18next';
+import nextI18nextConfig from '../next-i18next.config';
 import '../app/globals.css';
 
-
-import { AuthProvider } from '../contexts/AuthContext';
-
 function MyApp({ Component, pageProps }) {
-  return (
-    <AuthProvider>
-      <Component {...pageProps} />
-    </AuthProvider>
-  );
+  return <Component  {...pageProps} />;
 }
 
-export default MyApp;
-
-
+export default appWithTranslation(MyApp, nextI18nextConfig);

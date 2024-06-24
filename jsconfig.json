@@ -7,7 +7,9 @@
         "@public/*": ["public/*"],     
         "@app/*": ["app/*"],
         "@contexts/*": ["contexts/*"],
-        "@utils/*": ["utils/*"]
+        "@utils/*": ["app/utils/*"],
+        "@locales/*": ["locales/*"]
+
 
 
         
