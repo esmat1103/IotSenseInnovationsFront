@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Notification from '/public/assets/Navbar/notif.svg';
 import Pic from '/public/assets/Navbar/picture.jpg';
+import NotificationPopup from '@components/Admin/notification';
 
 const Navbar = () => {
     const [language, setLanguage] = useState('en');
@@ -48,6 +49,6 @@ const Navbar = () => {
             </div>
         </nav>
     );
-};
-
-export default Navbar;
+  };
+  
+  export default Navbar;
