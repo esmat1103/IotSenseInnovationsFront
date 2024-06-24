@@ -8,6 +8,8 @@ import NotificationPopup from '@components/Admin/notification';
 const Navbar = () => {
     const [language, setLanguage] = useState('en');
     const router = useRouter();
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
 
     useEffect(() => {
         const storedLanguage = localStorage.getItem('language');
@@ -21,6 +23,10 @@ const Navbar = () => {
         setLanguage(newLanguage);
         localStorage.setItem('language', newLanguage);
         router.push(router.pathname, router.asPath, { locale: newLanguage });
+    };
+
+    const togglePopup = () => {
+        setIsPopupOpen(!isPopupOpen);
     };
 
     return (
@@ -37,10 +43,12 @@ const Navbar = () => {
                 </div>
 
                 <div className="icons-container mt-2 mr-2 flex items-center justify-center">
-                    <button className="flex items-center justify-center text-white p-0 m-0">
-                        <Image src={Notification} alt='notification' width={15} id="notification-icon" className='m-0' />
-                    </button>
-                </div>
+                <button className="flex items-center justify-center text-white p-0 m-0" onClick={togglePopup}>
+                    <Image src={Notification} alt='notification' width={15} id="notification-icon" className='m-0' />
+                </button>
+            </div>
+
+            {isPopupOpen && <NotificationPopup onClose={togglePopup} />}
                 <div className="profile-container mt-2 mr-2 flex items-center justify-center">
                     <button className="flex items-center justify-center text-white p-0 m-0">
                         <Image src={Pic} alt='pic' id="profile-pic" className='m-0' />
