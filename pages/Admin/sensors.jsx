@@ -8,8 +8,7 @@ const Sensors = () => {
         <Layout >
             <div className="mt-5 bg-w">
             <TableS/>
-            </div>
-            
+            </div>  
         </Layout>       
         </>
 

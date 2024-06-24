@@ -1,8 +1,6 @@
 import React from 'react';
 import Sidebar from './sidebar';
 import Content from '../content';
-import Navbar from './navbar';
-
 
 const Layout = ({ children }) => {
     return (
@@ -15,6 +13,6 @@ const Layout = ({ children }) => {
         </div>
     </div>
 );
-  };
+};
   
 export default Layout;

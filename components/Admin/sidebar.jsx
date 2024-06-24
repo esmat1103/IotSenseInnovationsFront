@@ -20,9 +20,6 @@ import msgG from '/public/assets/Sidebar/msg-g.svg';
 import logout from '/public/assets/Sidebar/logout.svg';
 import LogoutConfirmation from '@components/Commun/Popups/LogoutPopup';
 
-
-
-
 const Sidebar = () => {
     const router = useRouter();
     const [activePath, setActivePath] = useState('');
@@ -34,8 +31,6 @@ const Sidebar = () => {
     };
 
     const handleConfirmLogout = () => {
-        // Perform logout action here
-        // Redirect or clear session/storage
         setShowLogoutConfirmation(false);
     };
 

@@ -3,7 +3,6 @@ import Sidebar from './sidebar';
 import Content from '../content';
 import Navbar from './navbar';
 
-
 const LayoutHome = ({ children }) => {
     return (
         <div className="flex">
@@ -16,6 +15,6 @@ const LayoutHome = ({ children }) => {
         </div>
     </div>
 );
-  };
+};
   
 export default LayoutHome;

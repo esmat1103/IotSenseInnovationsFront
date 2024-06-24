@@ -46,11 +46,9 @@ const Table = () => {
   };
 
   const handleDelete = (id) => {
-    // Handle delete logic here
   };
 
   const handleEdit = (id) => {
-    // Handle edit logic here
   };
 
   const handleCheckboxChange = (id) => {
@@ -75,7 +73,6 @@ const Table = () => {
 
   const startIndex = (currentPage - 1) * rowsPerPage;
   const endIndex = currentPage * rowsPerPage;
-
   const filterOptions = ['Option 1', 'Option 2', 'Option 3'];
 
   const handleDeleteSelected = () => {
@@ -158,8 +155,6 @@ const Table = () => {
       )}
     </div>
   );
-
-
 };
 
 export default Table;

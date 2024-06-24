@@ -1,4 +1,3 @@
-// pages/_app.js
 import React from 'react';
 import '../app/globals.css';
 
