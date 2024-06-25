@@ -1,8 +1,10 @@
 import Layout from "../../components/Admin/layout";
 import { useEffect, useState } from 'react';
 import TableD from "@components/Admin/DevicesContent/TableD";
+import { getTranslations } from '../../app/utils/getTranslations';
 
-const Clients = ({ initialLanguage }) => {
+
+const Devices = ({ initialLanguage }) => {
     const [language, setLanguage] = useState(initialLanguage);
 
     useEffect(() => {
@@ -21,13 +23,14 @@ const Clients = ({ initialLanguage }) => {
     );
 }
 
-export async function getServerSideProps(context) {
-    const initialLanguage = 'English'; 
+   
+  export const getServerSideProps = async ({ locale }) => {
+    const translations = await getTranslations(locale,['HeaderDevicesTab','sidebar'])
     return {
         props: {
-            initialLanguage
-        }
-    };
-}
+          ...translations,
+        },
+      };
+    }
 
-export default Clients;
+export default Devices;

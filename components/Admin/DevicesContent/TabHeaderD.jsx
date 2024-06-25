@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { englishDictionary, frenchDictionary } from '@app/utils/language/headerDevice';
+import { useTranslation } from 'next-i18next';
 
 const TableHeaderD = ({ handleHeaderCheckboxChange }) => {
-  const [language, setLanguage] = useState('English'); 
+  const [language, setLanguage] = useState('en'); 
+  const { t } = useTranslation('HeaderDevicesTab'); 
+
 
   useEffect(() => {
     const storedLanguage = localStorage.getItem('language');
@@ -11,7 +13,6 @@ const TableHeaderD = ({ handleHeaderCheckboxChange }) => {
     }
   }, []);
 
-  const dictionary = language === 'French' ? frenchDictionary : englishDictionary;
   
   return (
     <thead className="table-header darkgrey">
@@ -23,15 +24,15 @@ const TableHeaderD = ({ handleHeaderCheckboxChange }) => {
             onChange={handleHeaderCheckboxChange} 
           />
         </th>
-        <th className='f12 nunito'>{dictionary.id}</th>
-        <th className='f12 nunito pl23'>{dictionary.name}</th>
-        <th className='f12 nunito'>{dictionary.macAddress}</th>
-        <th className='f12 nunito pl17'>{dictionary.location}</th>
-        <th className='f12 nunito pl23'>{dictionary.admin}</th>
-        <th className='f12 nunito pl50'>{dictionary.clients}</th>
-        <th className='f12 nunito pr30'>{dictionary.sensors}</th>
-        <th className='f12 nunito pl70'>{dictionary.state}</th>
-        <th className='f12 nunito pl35'>{dictionary.actions}</th>
+        <th className='f12 nunito'>{t('id')}</th>
+        <th className='f12 nunito pl23'>{t('name')}</th>
+        <th className='f12 nunito'>{t('macAddress')}</th>
+        <th className='f12 nunito pl17'>{t('location')}</th>
+        <th className='f12 nunito pl23'>{t('admin')}</th>
+        <th className='f12 nunito pl50'>{t('clients')}</th>
+        <th className='f12 nunito pr30'>{t('sensors')}</th>
+        <th className='f12 nunito pl70'>{t('state')}</th>
+        <th className='f12 nunito pl35'>{t('actions')}</th>
       </tr>
     </thead>
   );

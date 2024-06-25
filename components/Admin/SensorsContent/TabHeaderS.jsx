@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { englishDictionary, frenchDictionary } from '@app/utils/language/headerSensor';
+import { useTranslation } from 'next-i18next';
 
 const TableHeaderS = ({ handleHeaderCheckboxChange }) => {
-  const [language, setLanguage] = useState('English'); 
+  const [language, setLanguage] = useState('en'); 
+  const { t } = useTranslation('HeaderSensorsTab'); 
+
 
   useEffect(() => {
     const storedLanguage = localStorage.getItem('language');
@@ -11,7 +13,6 @@ const TableHeaderS = ({ handleHeaderCheckboxChange }) => {
     }
   }, []);
 
-  const dictionary = language === 'French' ? frenchDictionary : englishDictionary;
   
   return (
     <thead className="table-header darkgrey">
@@ -23,17 +24,17 @@ const TableHeaderS = ({ handleHeaderCheckboxChange }) => {
             onChange={handleHeaderCheckboxChange} 
           />
         </th>
-        <th>{dictionary.id}</th>
-        <th>{dictionary.ref}</th>
-        <th>{dictionary.name}</th>
-        <th>{dictionary.unit}</th>
-        <th>{dictionary.rangeMin}</th>
-        <th>{dictionary.rangeMax}</th>
-        <th>{dictionary.thresholdMin}</th>
-        <th>{dictionary.thresholdMax}</th>
-        <th>{dictionary.startIndex}</th>
-        <th className="pl54">{dictionary.pulse}</th>
-        <th className="center">{dictionary.actions}</th>
+        <th>{t('id')}</th>
+        <th>{t('ref')}</th>
+        <th>{t('name')}</th>
+        <th>{t('unit')}</th>
+        <th>{t('rangeMin')}</th>
+        <th>{t('rangeMax')}</th>
+        <th>{t('thresholdMin')}</th>
+        <th>{t('thresholdMax')}</th>
+        <th>{t('startIndex')}</th>
+        <th className="pl54">{t('pulse')}</th>
+        <th className="center">{t('actions')}</th>
       </tr>
     </thead>
   );
