@@ -4,7 +4,7 @@ import clear from '../../../public/assets/Table/delete.svg';
 import edit from '../../../public/assets/Table/edit.svg';
 import DeleteConfirmation from '@components/Commun/Popups/Clients/DeleteConfirmationModal';
 
-const TableBody = ({ tableData, handleDelete, handleEdit, selectedRows, handleCheckboxChange }) => {
+const TableBody = ({ tableData, handleEdit, selectedRows, handleCheckboxChange }) => {
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [deleteItem, setDeleteItem] = useState(null);
 

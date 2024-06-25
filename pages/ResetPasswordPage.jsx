@@ -5,6 +5,10 @@ import SubmitButton from '../components/Commun/Buttons/SubmitButton';
 import passwordIcon from '../public/assets/iconsLogin/pass.svg';
 import eyeC from '../public/assets/iconsLogin/eyeC.svg';
 import eyeO from '../public/assets/iconsLogin/eyeO.svg';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+
 
 const ResetPasswordPage = () => {
   const [email, setEmail] = useState('');
@@ -12,29 +16,12 @@ const ResetPasswordPage = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-  const [language, setLanguage] = useState('English');
-  const [textOptions, setTextOptions] = useState({});
+  const [language, setLanguage] = useState('en');
   const router = useRouter();
+  const { t } = useTranslation('ResetPass'); 
 
-  const englishTextOptions = {
-    welcomeMessage: 'Reset Password',
-    instructions: 'Please enter your email address and new password.',
-    passwordPlaceholder: 'Enter password',
-    confirmPasswordPlaceholder: 'Confirm password',
-    submitButton: 'Reset Password',
-    passwordsDoNotMatch: 'Passwords do not match',
-    passwordResetFor: 'Password reset for:',
-  };
 
-  const frenchTextOptions = {
-    welcomeMessage: 'Réinitialiser le mot de passe',
-    instructions: 'Veuillez saisir votre adresse e-mail et votre nouveau mot de passe.',
-    passwordPlaceholder: 'Entrez le mot de passe',
-    confirmPasswordPlaceholder: 'Confirmez le mot de passe',
-    submitButton: 'Réinitialiser le mot de passe',
-    passwordsDoNotMatch: 'Les mots de passe ne correspondent pas',
-    passwordResetFor: 'Réinitialisation du mot de passe pour :',
-  };
+  
 
   useEffect(() => {
     const storedLanguage = localStorage.getItem('language');
@@ -43,13 +30,7 @@ const ResetPasswordPage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (language === 'English') {
-      setTextOptions(englishTextOptions);
-    } else if (language === 'French') {
-      setTextOptions(frenchTextOptions);
-    }
-  }, [language]);
+  
 
   const handleSendVerificationEmail = (e) => {
     e.preventDefault();
@@ -68,17 +49,15 @@ const ResetPasswordPage = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      console.log(textOptions.passwordsDoNotMatch);
       return;
     }
-    console.log(`${textOptions.passwordResetFor} ${email} with password: ${password}`);
   };
 
   return (
     <div className="container flex justify-center items-center min-h-screen">
       <div className="content-container bg-white p-8 shadow-md max-w-md">
-        <h1 className="text-2xl font-bold mb-4">{textOptions.welcomeMessage}</h1>
-        <p className="text-gray-600 mb-6">{textOptions.instructions}</p>
+        <h1 className="text-2xl font-bold mb-4">{t('title')}</h1>
+        <p className="text-gray-600 mb-6"> {t('instructions')}</p>
         <form onSubmit={handleFormSubmit}>
           <div className="input-group">
             <div className="input-with-icon">
@@ -86,7 +65,7 @@ const ResetPasswordPage = () => {
               <input
                 type={passwordVisible ? 'text' : 'password'}
                 id="password"
-                placeholder={textOptions.passwordPlaceholder}
+                placeholder={t('passwordPlaceholder')}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 aria-label="Password"
@@ -115,7 +94,7 @@ const ResetPasswordPage = () => {
               <input
                 type={confirmPasswordVisible ? 'text' : 'password'}
                 id="confirmPassword"
-                placeholder={textOptions.confirmPasswordPlaceholder}
+                placeholder={t('confirmPasswordPlaceholder')}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 aria-label="Confirm Password"
@@ -138,11 +117,18 @@ const ResetPasswordPage = () => {
               />
             </div>
           </div>
-          <SubmitButton onClick={handleFormSubmit}>{textOptions.submitButton}</SubmitButton>
+          <SubmitButton onClick={handleFormSubmit}>{t('submitButton')}</SubmitButton>
         </form>
       </div>
     </div>
   );
 };
-
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['ResetPass'])), 
+    },
+  };
+}
 export default ResetPasswordPage;
+
