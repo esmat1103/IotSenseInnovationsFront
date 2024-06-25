@@ -6,7 +6,6 @@ const Pulses = () => {
         <>
         <Layout />        
         </>
-
     );
 
 }

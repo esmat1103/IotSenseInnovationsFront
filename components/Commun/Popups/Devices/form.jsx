@@ -6,7 +6,6 @@ import SuccessAlert from '../../Alerts/success-alert';
 import ErrorAlert from '../../Alerts/error-alert'; 
 
 const FormDevice = ({ isOpen, onClose }) => {
-  const fileInputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);

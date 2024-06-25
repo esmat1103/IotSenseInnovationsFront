@@ -6,7 +6,6 @@ const Units = () => {
         <>
         <Layout />        
         </>
-
     );
 
 }

@@ -24,7 +24,7 @@ const FormClient = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
     const formData = new FormData(e.target);
     const firstName = formData.get('firstName');
     const lastName = formData.get('lastName');
@@ -33,7 +33,7 @@ const FormClient = ({ isOpen, onClose }) => {
     const password = formData.get('password');
   
     if (!firstName || !lastName || !email || !phone || !password) {
-      setShowErrorAlert(true); // Show error alert if any field is empty
+      setShowErrorAlert(true); 
       return;
     }
     setShowSuccessAlert(true);

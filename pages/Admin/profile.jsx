@@ -1,14 +1,16 @@
-import Layout from "../../components/Admin/layout";
+import LayoutHome from "@components/Admin/layoutHome";
+import Profile from "@components/Admin/profile";
 
 
-const Profile = () => {
+const profilePage = () => {
     return (
         <>
-        <Layout />        
+        <LayoutHome />  
+        <div className="mt-5 bg-w"> 
+        <Profile /> </div>    
         </>
-
     );
 
 }
 
-export default Profile;
+export default profilePage;

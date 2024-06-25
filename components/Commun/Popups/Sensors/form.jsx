@@ -1,13 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import returnIcon from '/public/assets/return.svg';
-import profile from '/public/assets/profile.svg';
 import SuccessAlert from '../../Alerts/success-alert';
 import ErrorAlert from '../../Alerts/error-alert';
 
 
 const FormSensor = ({ isOpen, onClose }) => {
-  const fileInputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
@@ -24,7 +22,7 @@ const FormSensor = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
     const formData = new FormData(e.target);
     const firstName = formData.get('firstName');
     const lastName = formData.get('lastName');
@@ -33,7 +31,7 @@ const FormSensor = ({ isOpen, onClose }) => {
     const password = formData.get('password');
   
     if (!firstName || !lastName || !email || !phone || !password) {
-      setShowErrorAlert(true); // Show error alert if any field is empty
+      setShowErrorAlert(true); 
       return;
     }
     setShowSuccessAlert(true);

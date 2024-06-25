@@ -13,9 +13,9 @@ const DeleteConfirmation = ({ item, onConfirmDelete, onCancelDelete }) => {
 
           <p>
             <span className='fw600 f20 center'>Are you sure?</span><br />
-            <span className='f14'> You want to delete the device "</span>
+            <span className='f14'> You want to delete the device</span>
             <span className='fw600 f12'> {item.deviceName}</span>
-            <span className='f14'>" located at</span>
+            <span className='f14'>located at</span>
             <span className='fw600 f12'> {item.location}</span>
             <span className='f14'>, managed by </span>
             <span className='fw600 f12'> {item.admin}</span>?
