@@ -51,7 +51,7 @@ const ReclamationPage = () => {
 
   return (
     <>
-      <h1 className=" nunito mt70 fw600 pl-4 mb-5 darkgrey f20 title">COMPLAINTS</h1>
+      <h1 className=" nunito mt70 fw600 pl-4 mb-5 darkgrey f20 title">Complaints</h1>
 
       <div className=" nunito filter-section" ref={filterRef}>
         <button
