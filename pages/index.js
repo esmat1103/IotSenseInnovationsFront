@@ -1,4 +1,3 @@
-// pages/index.js
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -51,6 +50,7 @@ const HomePage = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    // Add your form submission logic here
   };
 
   return (
@@ -106,19 +106,11 @@ const HomePage = () => {
                   aria-label="Password"
                 />
                 <Image
-                  src={eyeC}
+                  src={passwordVisible ? eyeO : eyeC}
                   width={20}
                   height={20}
-                  alt="visibility icon closed"
-                  className={`visibility-icon ${!passwordVisible ? 'visible' : ''}`}
-                  onClick={togglePasswordVisibility}
-                />
-                <Image
-                  src={eyeO}
-                  width={20}
-                  height={20}
-                  alt="visibility icon open"
-                  className={`visibility-icon ${passwordVisible ? 'visible' : ''}`}
+                  alt="visibility icon"
+                  className="visibility-icon"
                   onClick={togglePasswordVisibility}
                 />
               </div>
@@ -129,7 +121,7 @@ const HomePage = () => {
                 <input type="checkbox" />
                 {t('agreeToTerms')} <a className="mx-1" href="#">
                   {t('termsLink')}
-                </a> {t('agreeToTerms')} <a className="mx-1" href="#">
+                </a> {t('and')} <a className="mx-1" href="#">
                   {t('privacyLink')}
                 </a>
               </label>

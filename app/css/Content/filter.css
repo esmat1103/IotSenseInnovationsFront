@@ -10,9 +10,8 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  border: 1px solid #ededef;
   border-radius: 10px;
-  background: white;
+  background: #21242B;
   cursor: pointer;
 }
   
@@ -20,11 +19,11 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background: white;
-  border: 1px solid #ededef;
+  background: #21242B;
   border-radius: 5px;
   width: 100%;
   z-index: 1;
+  color: #B8BABF;
 }
   
 .dropdown-item {
@@ -33,7 +32,7 @@
 }
   
 .dropdown-item:hover {
-  background: #f1f1f1;
+  background: #2f333c;
 }
 
   

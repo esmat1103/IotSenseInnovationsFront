@@ -9,12 +9,13 @@
   
 .search-input {
   padding-right: 40px; 
-  border: 1px solid #ededef;
   border-radius: 10px;
   padding: 10px;
   font-size: 14px;
   width: 300px; 
   margin-right: 10px;
+  background-color: #21242B;
+  color: #B8BABF;
 }
   
 .placeholder-search {
@@ -28,8 +29,6 @@
   
 .search-input:focus {
   outline: none; 
-  border-color: #007bff; 
-  box-shadow: 0 0 0 0.1rem rgba(111, 174, 242, 0.1); 
 }
 
 .search-input {

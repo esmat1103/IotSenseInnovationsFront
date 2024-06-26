@@ -6,11 +6,11 @@
 }
 
 .sidebar nav ul li:hover {
-    background-color: #0071FF;
+    background-color: #5D69F3;
     color: #FFFFFF;
 }
 .sidebar nav ul li.active{
-    background-color: #0071FF;
+    background-color: #5D69F3;
     color: #FFFFFF ;
     border-radius: 10px !important;
 }
