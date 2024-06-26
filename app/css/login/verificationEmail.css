@@ -1,8 +1,8 @@
 .container {
     padding: 30px; 
-    background-image: url('/assets/loginBg/bg.svg'); 
     background-size: cover;
     background-position: center;
+    background-color: #5D69F3 ;
   }
   
   .container .content-container {
@@ -11,4 +11,5 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     width: 100%; 
     max-width:600px; 
+    background-color:#21242B ;
   }
