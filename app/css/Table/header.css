@@ -1,13 +1,14 @@
 .table-header {
-  background-color: #f9f9f9; 
+  background-color: #21242B; 
 }
 
 .table-header th,
 .table-header-row th {
   padding: 12px 10px; 
   text-align: left;
-  background-color: #f9f9f9; 
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #21242B; 
+  border-bottom: 1px solid #21242B;
+  color: #B8BABF;
 }
 
 .table-header-row th:first-child {

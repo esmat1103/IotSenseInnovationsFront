@@ -1,4 +1,3 @@
-import Profile from "../../components/Admin/profile";
 import LayoutHome from "@components/Admin/layoutHome";
 import { getTranslations } from '../../app/utils/getTranslations';
 import React, {useState,useEffect} from "react";
@@ -12,8 +11,7 @@ const Home = (initialLanguage) => {
 
     return (
         <>
-            <LayoutHome />
-            <Profile />       
+            <LayoutHome />    
         </>
 
     );

@@ -2,6 +2,8 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px 1px !important; 
+  border: 1px solid #21242B; 
+  border-radius: 10px 10px 0 0;
 }
   
 
@@ -9,7 +11,7 @@
   width: 100%;
   overflow-x: auto;
   height: auto;
-  background-color: white;
+  background-color: #0B0D1A;
   padding: 20px;
   padding-top: 0px; 
   border-radius: 10px;

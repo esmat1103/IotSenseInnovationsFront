@@ -140,32 +140,25 @@ const TableS = () => {
         selectedRows={selectedRows}
         handleCheckboxChange={handleCheckboxChange}
       />
-      <tfoot>
-        <tr>
-          <td colSpan="8">
-            <div className='pagination-container'>
-              <Pagination
-                currentPage={currentPage}
-                totalPages={Math.ceil(tableData.length / rowsPerPage)}
-                onPageChange={onPageChange}
-              />
-            </div>
-          </td>
-        </tr>
-      </tfoot>
-      {isFormOpen && <FormSensor isOpen={isFormOpen} onClose={toggleForm} />}
-      {isFormOpen && <div className="table-overlay"></div>}
     </table>
-  </div>
-  {showDeleteConfirmation && (
+        <div className='pagination-container'>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={Math.ceil(tableData.length / rowsPerPage)}
+            onPageChange={onPageChange}
+          />
+        </div>
+        {isFormOpen && <FormSensor isOpen={isFormOpen} onClose={toggleForm} />}
+        {isFormOpen && <div className="table-overlay"></div>}
+      </div>
+      {showDeleteConfirmation && (
         <DeleteConfirmation
           item={deleteItem}
           onConfirmDelete={confirmDelete}
           onCancelDelete={cancelDelete}
         />
       )}
-</div>
-
+    </div>
   );
 };
 

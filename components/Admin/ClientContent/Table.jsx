@@ -129,20 +129,14 @@ const Table = () => {
             selectedRows={selectedRows}
             handleCheckboxChange={handleCheckboxChange}
           />
-          <tfoot>
-            <tr>
-              <td colSpan="8">
-                <div className='pagination-container'>
-                  <Pagination
-                    currentPage={currentPage}
-                    totalPages={Math.ceil(tableData.length / rowsPerPage)}
-                    onPageChange={onPageChange}
-                  />
-                </div>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+          </table>
+        <div className='pagination-container'>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={Math.ceil(tableData.length / rowsPerPage)}
+            onPageChange={onPageChange}
+          />
+        </div>
         {isFormOpen && <FormClient isOpen={isFormOpen} onClose={toggleForm} />}
         {isFormOpen && <div className="table-overlay"></div>}
       </div>

@@ -13,7 +13,7 @@
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s;
-    border: 1px solid #ededef;
+    border: 1px solid #21242B;
     margin: 0 4px;
     cursor: pointer;
     border-radius: 10px;
@@ -21,19 +21,19 @@
 }
 
 .link:hover:not(.active):not(.disabled) {
-    background-color: #ededef;
+    background-color: #21242B;
 }
 
 .active {
-    background-color: #0071FF;
+    background-color: #5D69F3;
     color: white;
-    border: 1px solid #0071FF;
+    border: 1px solid #5D69F3;
 }
 
 .disabled {
     pointer-events: none;
     color: #ededef;
-    border-color: #ededef;
+    border-color: #21242B;
 }
 
 

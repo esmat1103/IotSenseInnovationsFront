@@ -4,9 +4,9 @@
   
 .date-picker {
   margin-right: 10px;
-  border: 1px solid #ededef;
   border-radius: 10px;
   padding: 10px;
+  background-color: #21242B;
 }
 
 .icon-container {
