@@ -50,15 +50,14 @@ const HomePage = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
   };
 
   return (
     <div className="container nunito">
       <div className="left-panel">
         <div className="left-content">
-          <h1>{t('welcomeMessage')}</h1>
-          <p>{t('signInMessage')}</p>
+          <h1 className='white'>{t('welcomeMessage')}</h1>
+          <p className='white'>{t('signInMessage')}</p>
         </div>
       </div>
 
@@ -79,7 +78,7 @@ const HomePage = () => {
           </button>
 
           <form onSubmit={handleSignIn}>
-            <h1>{t('submitButton')}</h1>
+            <h1 className='sidebargrey'>{t('submitButton')}</h1>
             <div className="input-group">
               <div className="input-with-icon">
                 <Image src={emailIcon} width={20} height={20} alt="email icon" className="icon" />

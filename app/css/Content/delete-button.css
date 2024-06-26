@@ -5,7 +5,6 @@
   border: 1px solid  rgb(254,117,75,0.9) ;
   border-radius: 10px;
   font-size: 14px;
-  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   margin-right: 10px; 
