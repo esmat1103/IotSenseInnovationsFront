@@ -78,7 +78,7 @@ const NotificationPopup = ({ onClose }) => {
                 <span className='notification-span'>Notifications</span>
                 <button className="mark-all-read-button" onClick={markAllAsRead}>
                     <Image src={tick} alt="Mark all read" className="button-icon" width={15} />
-                    Mark all read
+                    <span className="button-text">Mark all read</span>
                 </button>
             </div>
             <div className="notification-filters">
