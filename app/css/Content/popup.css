@@ -1,32 +1,16 @@
-:root {
-  --background-color: white;
-  --text-color: black;
-  --box-shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #090A15;
-    --text-color: white;
-    --box-shadow-color: rgba(255, 255, 255, 0.);
-  }
-}
-
 .form-container-popup {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   width: 30%; 
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: #1A1D22;
+  color: #B8BABF;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px var(--box-shadow-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
-
-
 
 .form-group {
   margin-bottom: 15px;
@@ -42,8 +26,8 @@ button {
 }
 
 .input-field, .custom-select {
-  background-color: white;
-  border: 1px solid #B8BABF;
+  background-color: #1A1D22;
+  border: 1px solid #77797d;
   padding: 8px;
   border-radius: 10px;
   width: 100%;
@@ -53,7 +37,7 @@ button {
 }
 
 .input-field:focus, .custom-select:focus {
-  border-color: #77797d; 
+  border-color: #B8BABF; 
 }
 
 .custom-select::-ms-expand {
@@ -78,7 +62,7 @@ button {
   background-image: url('/assets/chevron-down.svg'); 
   background-repeat: no-repeat;
   background-position: calc(100% - 10px) center;
-  border: 1px solid #B8BABF;
+  border: 1px solid #77797d;
   border-radius: 10px;
   width: 100%;
   box-sizing: border-box;
