@@ -15,12 +15,16 @@
     "i18next": "^23.11.5",
     "i18next-http-backend": "^2.5.2",
     "i18next-resources-to-backend": "^1.2.1",
+    "libphonenumber-js": "^1.11.4",
     "next": "^14.2.4",
     "next-i18next": "^15.3.0",
     "react": "^18",
     "react-datepicker": "^6.9.0",
     "react-dom": "^18",
-    "react-i18next": "^14.1.2"
+    "react-i18next": "^14.1.2",
+    "react-phone-input-2": "^2.15.1",
+    "react-phone-number-input": "^3.4.3",
+    "react-select": "^5.8.0"
   },
   "devDependencies": {
     "eslint": "^8",
