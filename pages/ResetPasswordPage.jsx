@@ -56,8 +56,8 @@ const ResetPasswordPage = () => {
   return (
     <div className="container flex justify-center items-center min-h-screen">
       <div className="content-container bg-white p-8 shadow-md max-w-md">
-        <h1 className="text-2xl font-bold mb-4">{t('title')}</h1>
-        <p className="text-gray-600 mb-6"> {t('instructions')}</p>
+        <h1 className="text-2xl sidebargrey font-bold  mb-4">{t('title')}</h1>
+        <p className="sidebargrey mb-6"> {t('instructions')}</p>
         <form onSubmit={handleFormSubmit}>
           <div className="input-group">
             <div className="input-with-icon">

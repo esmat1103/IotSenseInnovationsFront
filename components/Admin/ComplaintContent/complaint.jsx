@@ -51,14 +51,14 @@ const ReclamationPage = () => {
 
   return (
     <>
-      <h1 className=" nunito mt70 fw600 pl-4 mb-5 darkgrey f20 title">COMPLAINTS</h1>
+      <h1 className=" nunito mt70 fw600 pl-4 mb-5 sidebargrey f20 title">COMPLAINTS</h1>
 
-      <div className=" nunito filter-section" ref={filterRef}>
+      <div className=" nunito  filter-section" ref={filterRef}>
         <button
           className={filter === 'Total' ? 'active-filter' : 'filter'}
           onClick={() => handleFilterChange('Total')}
         >
-        <span className='f14'>Total Complaints</span> <span className='f12'> (225)</span>
+        <span className='f14 '>Total Complaints</span> <span className='f12'> (225)</span>
         </button>
         <button
           className={filter === 'Resolved' ? 'active-filter' : 'filter'}
