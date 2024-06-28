@@ -4,10 +4,12 @@ import export1 from '../../../public/assets/Table/export.svg';
 import edit from '../../../public/assets/Table/edit.svg';
 import clear from '../../../public/assets/Table/delete.svg';
 import DeleteConfirmation from '@components/Commun/popups/Devices/DeleteConfirmationModal';
+import SensorsPopup from '@components/Commun/Popups/Devices/SensorsPopup';
 
 const TableBodyD = ({ tableData, handleEdit, selectedRows, handleCheckboxChange }) => {
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [deleteItem, setDeleteItem] = useState(null);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const handleDelete = (id) => {
     const itemToDelete = tableData.find(item => item.id === id);
@@ -23,6 +25,14 @@ const TableBodyD = ({ tableData, handleEdit, selectedRows, handleCheckboxChange 
   const cancelDelete = () => {
     setShowDeleteConfirmation(false);
   };
+  const handleButtonClick = () => {
+    setIsPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupVisible(false);
+  };
+  
   return (
     <>
 
@@ -52,7 +62,11 @@ const TableBodyD = ({ tableData, handleEdit, selectedRows, handleCheckboxChange 
               </div>
             ))}
           </td>
-          <td className='f11 nunito pl23  '><div className="box-cell f11">{row.sensors}</div></td>
+          <td className='f11 nunito pl23'>
+              <button className="box-cell f11 button-like" onClick={handleButtonClick}>
+                {row.sensors}
+              </button>
+            </td>
           <td className="f11 nunito  ">
             <div className={row.state === 'Enabled' ? 'box-cellE f11' : 'box-cellD f11'}>
               {row.state}
@@ -81,6 +95,7 @@ const TableBodyD = ({ tableData, handleEdit, selectedRows, handleCheckboxChange 
           onCancelDelete={cancelDelete} 
         />
       )}
+      {isPopupVisible && <SensorsPopup closePopup={closePopup} />}
     </>
   );
 };
