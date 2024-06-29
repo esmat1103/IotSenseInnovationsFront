@@ -5,34 +5,8 @@ import edit from '../../../public/assets/Table/edit.svg';
 import clear from '../../../public/assets/Table/delete.svg';
 import DeleteConfirmation from '@components/Commun/Popups/Sensors/DeleteConfirmationModal';
 
-const TableBodyS = ({ tableData, handleEdit, selectedRows, handleCheckboxChange}) => {
-  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
-  const [deleteItem, setDeleteItem] = useState(null);
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-
-  const handleDelete = (id) => {
-    const itemToDelete = tableData.find(item => item.id === id);
-    setDeleteItem(itemToDelete);
-    setShowDeleteConfirmation(true);
-  };
-  const confirmDelete = () => {
-   
-    setShowDeleteConfirmation(false);
-  };
-
-  const cancelDelete = () => {
-    setShowDeleteConfirmation(false);
-  };
-  const handleButtonClick = () => {
-    setIsPopupVisible(true);
-  };
-
-  const closePopup = () => {
-    setIsPopupVisible(false);
-  };
-
+const TableBodyS = ({ tableData, handleEdit, selectedRows, handleCheckboxChange, handleDelete }) => {
   return (
-    <>
     <tbody className='darkgrey'>
       {tableData.map((row, index) => (
         <tr key={index} className="table-row-box nunito f12">
@@ -73,15 +47,6 @@ const TableBodyS = ({ tableData, handleEdit, selectedRows, handleCheckboxChange}
         </tr>
       ))}
     </tbody>
-     {showDeleteConfirmation && (
-      <DeleteConfirmation 
-        item={deleteItem} 
-        onConfirmDelete={confirmDelete} 
-        onCancelDelete={cancelDelete} 
-      />
-    )}
-    {isPopupVisible && <SensorsPopup closePopup={closePopup} />}
-    </>
   );
 };
 
