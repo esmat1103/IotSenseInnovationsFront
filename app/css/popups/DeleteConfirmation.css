@@ -11,7 +11,7 @@
   }
   
   .delete-confirmation-container {
-    background-color: #21242B;
+    background-color: #1A1D22;
     color: #B8BABF;
     padding: 30px;
     border-radius: 10px;
@@ -41,7 +41,7 @@
   }
   
   .confirm-button {
-    background-color:  rgba(228,251, 248, 0.1);
+    background-color:  rgba(8, 145, 127, 0.1);
     border-radius: 10px;
     color: #14B8CA;
     padding: 5px 20px;

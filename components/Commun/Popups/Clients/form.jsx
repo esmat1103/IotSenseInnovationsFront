@@ -4,13 +4,15 @@ import returnIcon from '/public/assets/return.svg';
 import profile from '../../../../public/assets/profile.svg';
 import SuccessAlert from '../../Alerts/success-alert';
 import ErrorAlert from '../../Alerts/error-alert';
-
+import 'react-phone-input-2/lib/style.css';
+import PhoneInput from 'react-phone-input-2';
 
 const FormClient = ({ isOpen, onClose }) => {
   const fileInputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
+  const [phone, setPhone] = useState('');
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -29,7 +31,6 @@ const FormClient = ({ isOpen, onClose }) => {
     const firstName = formData.get('firstName');
     const lastName = formData.get('lastName');
     const email = formData.get('email');
-    const phone = formData.get('phone');
     const password = formData.get('password');
   
     if (!firstName || !lastName || !email || !phone || !password) {
@@ -39,8 +40,8 @@ const FormClient = ({ isOpen, onClose }) => {
     setShowSuccessAlert(true);
     e.target.reset();
     setSelectedImage(null);
+    setPhone('');
   };
-  
 
   const closeSuccessAlert = () => {
     setShowSuccessAlert(false);
@@ -56,19 +57,19 @@ const FormClient = ({ isOpen, onClose }) => {
 
   return (
     <div className="form-container-popup nunito">
-       {showSuccessAlert && <SuccessAlert message="Client added successfully !" onClose={closeSuccessAlert} />}
-       {showErrorAlert && <ErrorAlert message="Please fill in all the fields !" onClose={closeErrorAlert} />}
+      {showSuccessAlert && <SuccessAlert message="Client added successfully!" onClose={closeSuccessAlert} />}
+      {showErrorAlert && <ErrorAlert message="Please fill in all the fields!" onClose={closeErrorAlert} />}
       <button className="return-button mb-5" onClick={onClose}>
         <Image src={returnIcon} alt="Return" className="return-icon" height={25} />
       </button>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           {selectedImage && (
-            <div className="image-container flex " style={{ backgroundImage: `url(${selectedImage})` }}></div>
+            <div className="image-container flex" style={{ backgroundImage: `url(${selectedImage})` }}></div>
           )}
           {!selectedImage && (
             <div className="image-placeholder flex justify-center items-center">
-              <Image src={profile} alt='placeholder' width={80} />
+              <Image src={profile} alt="placeholder" width={80} />
             </div>
           )}
           <input
@@ -109,12 +110,17 @@ const FormClient = ({ isOpen, onClose }) => {
           />
         </div>
         <div className="form-group">
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            className="input-field"
-            placeholder="Phone Number"
+          <PhoneInput
+            country={'tn'}
+            value={phone}
+            onChange={phone => setPhone(phone)}
+            inputProps={{
+              name: 'phone',
+              autoFocus: false
+            }}
+            containerClass="react-tel-input"
+            inputClass="form-control"
+            
           />
         </div>
         <div className="form-group">
@@ -126,7 +132,18 @@ const FormClient = ({ isOpen, onClose }) => {
             placeholder="Password"
           />
         </div>
-        <button className='add-button w-full' type="submit">Add</button>
+        <div className="form-group select-container">
+          <select
+            id="State"
+            name="State"
+            className="input-field custom-select"
+          >
+             <option className='' disabled selected>State</option>
+            <option value="Enabled">Enabled</option>
+            <option value="Disabled">Disabled</option>
+          </select>
+        </div>
+        <button className="add-button w-full" type="submit">Add</button>
       </form>
     </div>
   );

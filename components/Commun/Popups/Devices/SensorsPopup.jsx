@@ -78,21 +78,25 @@ const SensorsPopup = ({ closePopup }) => {
               <div className="export-options">
                 <label>
                   Start Date:
-                  <input
-                    type="date"
-                    name="startDate"
-                    value={sensor.startDate}
-                    onChange={e => handleInputChange(index, e)}
-                  />
+                  <div className="custom-date-input">
+                    <input
+                      type="date"
+                      name="startDate"
+                      value={sensor.startDate}
+                      onChange={e => handleInputChange(index, e)}
+                    />
+                  </div>
                 </label>
                 <label>
                   End Date:
-                  <input
-                    type="date"
-                    name="endDate"
-                    value={sensor.endDate}
-                    onChange={e => handleInputChange(index, e)}
-                  />
+                  <div className="custom-date-input">
+                    <input
+                      type="date"
+                      name="endDate"
+                      value={sensor.endDate}
+                      onChange={e => handleInputChange(index, e)}
+                    />
+                  </div>
                 </label>
                 <label>
                   Frequency:
@@ -112,7 +116,7 @@ const SensorsPopup = ({ closePopup }) => {
           </div>
         ))}
         <div className='center1'>
-           <button className="add-button " onClick={handleSave}>Close</button>
+          <button className="add-button" onClick={handleSave}>Close</button>
         </div>
       </div>
     </div>
