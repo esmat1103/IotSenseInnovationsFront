@@ -7,17 +7,6 @@
 }
   
 
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-  height: auto;
-  background-color: #0B0D1A;
-  padding: 20px;
-  padding-top: 0px; 
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
 
 .table-overlay {
   position: absolute;

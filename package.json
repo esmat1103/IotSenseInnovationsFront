@@ -18,9 +18,11 @@
     "next": "^14.2.4",
     "next-i18next": "^15.3.0",
     "react": "^18",
+    "react-country-flag": "^3.1.0",
     "react-datepicker": "^6.9.0",
     "react-dom": "^18",
-    "react-i18next": "^14.1.2"
+    "react-i18next": "^14.1.2",
+    "react-world-flags": "^1.6.0"
   },
   "devDependencies": {
     "eslint": "^8",

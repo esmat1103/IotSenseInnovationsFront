@@ -77,5 +77,11 @@
 }
 
 
+.flag-icon {
+    width: 25px !important; /* Adjust width as needed */
+    height: auto !important; /* Ensure height adjusts proportionally */
+    margin-right: 5px !important; /* Add margin to separate flag from text */
+  }
+  
 
   
